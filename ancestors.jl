@@ -20,9 +20,7 @@ function ancestors(x,A)
     # find ancestors
     a=[]
     for i=x
-        t = findall(y->y>0,vec(AD[:,i]))
-        t = t'
-        a=unique([a... t])
+        a=unique([a... findall(y->y>0,vec(AD[:,i]))'])
     end
     a=setdiff(a,x)
     return a
